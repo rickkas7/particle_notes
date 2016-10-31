@@ -8,9 +8,9 @@ This technique also applies in areas where 2G is no longer supported, for exampl
 
 ## Particle SIM card
 
-The Particle SIM card is global. You can set up the SIM in one location and use it in another location, at least for a short demo.
+The Particle SIM card is global. You can set up the SIM in one location and use it in another location. 
 
-If you register a SIM in, say, the United States (US$0.99/megabyte) and then use it for months in India (US$2.99/megabyte) that would be considered cheating the system. But using it for a week or two for a demo or while traveling is fine.
+The [billing guide](https://docs.particle.io/guide/getting-started/billing/electron/) has additional information, but you have a home zone, say the United States (US$0.99/megabyte). If you travel to India, it's in a different zone with a different rate (US$2.99/megabyte). You'll initially be charged the $2.99 for the first megabyte of data in India, and the data usage there will be counted separately from your US data usage.
 
 If you want to set up the SIM card ahead of time you can use the right-side option at [https://setup.particle.io] (https://setup.particle.io) to activate only the Particle SIM card.
 
