@@ -182,28 +182,43 @@ I connected a ST-LINK/V2 mini to a Photon using SWD, which only requires three c
 
 You need to make sure your user firmware doesn't interfere with SWD; one easy way to do this is just put it in DFU mode (blinking yellow).
 
-Then just display the memory at 0x1FFF7A10 with a size of 0xc (12 bytes).
+Then just display the memory at **0x1FFF7A10** with a size of **C** (0xC, 12 bytes) and a data width of **8 bits**.
 
 ![ST-LINK Screen](stlink.png)
 
-Note that the bytes are out of order, as explained below.
+I also was able to use a ST-LINK/V2 mini SWD programmer on the Mac using OpenOCD in telnet mode:
+
+```
+openocd -f interface/stlink-v2.cfg -f target/stm32f2x.cfg -c "telnet_port 4444"
+```
+
+And then use the mdb command to display memory via the telnet session:
+
+```
+$ telnet localhost 4444
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+Open On-Chip Debugger
+> mdb 0x1FFF7A10 12
+0x1fff7a10: 3b 00 21 00 17 47 35 32 36 34 30 33 
+```
 
 I also tested this using the Particle Programmer shield using OpenOCD and GDB to get the data via JTAG:
 
 ```
 $ openocd -f interface/ftdi/particle-ftdi.cfg -f target/stm32f2x.cfg -c "gdb_port 3333"
+```
+
+And in a separate terminal window:
+
+```
 $ arm-none-eabi-gdb
 (gdb) target remote:3333
 Remote debugging using :3333
 0x00000000 in ?? ()
-(gdb) monitor mdw 0x1FFF7A10 3
-0x1fff7a10: 1232001e 31344734 39101149
-```
-
-Note that because of byte order, each 32-bit value has the individual bytes swapped. Below is the actual device ID, and you can easily see how the bytes are swapped:
-
-```
-            1e003212 34473431 49111039
+(gdb) monitor mdb 0x1FFF7A10 12
+0x1fff7a10: 3b 00 21 00 17 47 35 32 36 34 30 33 
 ```
 
 
