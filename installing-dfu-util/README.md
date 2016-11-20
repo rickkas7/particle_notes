@@ -215,11 +215,6 @@ If you use [MacPorts](https://www.macports.org) you can install it using:
 port install libusb dfu-util 
 ```
 
-### Mac - Manually
-
-http://dfu-util.sourceforge.net/releases/dfu-util-0.9.tar.gz
-
-
 
 ## Installation - Linux
 
