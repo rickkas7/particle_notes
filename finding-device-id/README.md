@@ -8,6 +8,8 @@ The device ID uniquely identifies your Particle device (Photon, Electron, P1, Co
 
 That's a made-up device ID. And you should probably avoid sharing your actual device IDs in public, just to be safe.
 
+Also note: even though the device ID is hexadecimal, many commands that take a device ID, like `particle device add` assume that the letters a-f will be lowercase. Using uppercase letters will not work properly.
+
 ## Using the Particle CLI
 
 For the Photon, Electron, and Core, an easy way is to use the [Particle CLI] (https://particle.io/cli).
