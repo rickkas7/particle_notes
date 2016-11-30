@@ -240,7 +240,7 @@ sudo pacman -Sy dfu-util
 
 You will also want to add a udev rule. This allows dfu-util to work without requiring sudo, which is convenient, and also necessary when using certain CLI and local build commands.
 
-Download the [50-particle.rules](xxx) file, then copy it to /etc/udev/rules.d.
+Download the [50-particle.rules](https://raw.githubusercontent.com/rickkas7/particle_notes/master/installing-dfu-util/files/50-particle.rules) file, then copy it to /etc/udev/rules.d.
 
 ```
 sudo cp 50-particle.rules /etc/udev/rules.d/
