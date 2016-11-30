@@ -238,6 +238,17 @@ Arch:
 sudo pacman -Sy dfu-util
 ```
 
+You will also want to add a udev rule. This allows dfu-util to work without requiring sudo, which is convenient, and also necessary when using certain CLI and local build commands.
+
+Download the [50-particle.rules](xxx) file, then copy it to /etc/udev/rules.d.
+
+```
+sudo cp 50-particle.rules /etc/udev/rules.d/
+```
+
+You may need to restart after this step. 
+
+
 ## Using dfu-util
 
 A good command to test dfu-util is the `-l` (list) command. For a Photon, it returns something like this:
