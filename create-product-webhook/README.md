@@ -65,7 +65,7 @@ To get around this, I wrote a very short node.js script to do it.
 
 ### Initial setup
 
-- Download the prodhook.js file into a directory.
+- Download the [prodhook.js](https://raw.githubusercontent.com/rickkas7/particle_notes/master/create-product-webhook/prodhook.js) file into a directory.
 
 - From the command line, in the directory with prodhook.js, install its dependencies:
 
