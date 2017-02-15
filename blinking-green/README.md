@@ -8,6 +8,8 @@ First, a few known working situations that the Photon is not compatible with:
 
 - If you are using a network that takes you to a web page where you need to either sign in or agree to terms and service when you first connect, using the Photon directly will be difficult or impossible. This is the case in some hotels and public Wi-Fi networks and is often referred to as Captive Portal.
 
+- If your Wi-Fi network uses 5 GHz only, instead of the more common 2.4 GHz, the Photon cannot be used. The Wi-Fi radio is only compatible with 2.4 GHz networks.
+
 For home users:
 
 - If your router uses WEP encryption, you should upgrade your router to something more secure. However it may be possible to connect your Photon with some difficulty by following the [WEP configuration instructions](http://rickkas7.github.io/wep/).
