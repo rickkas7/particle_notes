@@ -18,7 +18,7 @@ This rarely if ever fixes anything, and it sometimes can make things much worse.
 
 ## Cause 1: Blocking the loop
 
-In this simple program, you'll breathe cyan, then about 10 seconds later, you'll go to blinking green. Why? You've blocked the loop from returning, and in the default threading and system mode, that stops the cloud from being processed, which causes breathing green.
+In this simple program, you'll breathe cyan, then about 10 seconds later, you'll go to breathing green. Why? You've blocked the loop from returning, and in the default threading and system mode, that stops the cloud from being processed, which causes breathing green.
 
 Don't do this:
 
