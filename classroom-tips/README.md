@@ -13,7 +13,7 @@ This method is allows factory-fresh Photons to be unboxed and used immediately, 
 
 - Some phones have difficulties setting up a Photon (currently many Samsung Galaxy Note devices and some other Android phones).
 - This process is hard to debug since there isn't much feedback if something goes wrong.
-
+- Wi-Fi based configuration always uses Wi-Fi channel 1 when in listening mode (blinking blue). With a large number of Photons simultaneously using the same Wi-Fi channel interference can result. It may be helpful to stagger turning on the Photons.
 
 ### Setting up an instructor station
 
