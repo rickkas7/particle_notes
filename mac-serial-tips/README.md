@@ -29,6 +29,9 @@ If you have upgraded node, you may get an error installing serial port, having s
 sudo npm uninstall -g particle-cli
 ```
 
+If you have recently upgraded your operating system, you may want to reinstall [Homebrew](https://brew.sh). It's not so much that Homebrew needs reinstallation, but upgrading Mac OS X will uninstall the command line build tools, which may affect the ability to build the serial port driver for node. Reinstalling Homebrew is usually easier than installing Xcode and the command line tools.
+
+
 ## USB-3 Ports
 
 In the past, a few people have had trouble using Mac laptops with USB-3 USB ports. This hasn't happened recently, but putting a USB hub in between the laptop and the Photon has solved the problem.
