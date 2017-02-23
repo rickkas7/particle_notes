@@ -31,6 +31,12 @@ sudo npm uninstall -g particle-cli
 
 If you have recently upgraded your operating system, you may want to reinstall [Homebrew](https://brew.sh). It's not so much that Homebrew needs reinstallation, but upgrading Mac OS X will uninstall the command line build tools, which may affect the ability to build the serial port driver for node. Reinstalling Homebrew is usually easier than installing Xcode and the command line tools.
 
+Sometimes this command helps, as well:
+
+```
+sudo npm install -g node-pre-gyp npm serialport particle-cli
+```
+
 
 ## USB-3 Ports
 
