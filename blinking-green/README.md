@@ -72,3 +72,22 @@ void setup() {
 void loop() {
 }
 ```
+
+- If the Photon has ever been used with an external antenna, it may still be set to use the external antenna only. It won't fall back to the internal antenna, even if there is no signal, when using the ANT_EXTERNAL mode. The following program resets the antenna.
+
+```
+#include "Particle.h"
+
+STARTUP(WiFi.selectAntenna(ANT_INTERNAL));
+
+void setup() {
+	// So you can tell the operations have completed
+	pinMode(D7, OUTPUT);
+	digitalWrite(D7, HIGH);
+}
+
+void loop() {
+}
+```
+
+
