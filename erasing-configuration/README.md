@@ -20,7 +20,7 @@ particle keys save devicekeys.der
 
 ## Reprogram
 
-Download the empty.bin file. Its a file 3618 0xff bytes in it, enough to overwrite the configuration.
+Download the [empty.bin](https://raw.githubusercontent.com/rickkas7/particle_notes/master/erasing-configuration/empty.bin) file. Its a file 3618 0xff bytes in it, enough to overwrite the configuration.
 
 Photon:
 
