@@ -32,13 +32,12 @@ In order to use the product APIs, you need a product access token. Creating one 
 
 You will want to create **Two-legged Auth (Server)** client. In the next screen, you will get a token. Copy and paste this as you can't get it back again. It's also important to keep this a secret. And, it's not your product access token.
 
-
 ![Authentication List](images/auth_list.png)
 
 In the next steps you'll need a few things:
 
-- The **Name** field matches the name we just created above
-- The **Client ID** field will be needed to make API calls
+- The **Name** field matches the name we just created above (tempmon06)
+- The **Client ID** field will be needed to make API calls (tempmon06-3459)
 - The secret client token we got when creating a new client. In the examples below, `460edfd8d70742dd1f1e75c3d5cac5973351465d` is the token we got.
 
 ## Create a product bearer token
