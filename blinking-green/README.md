@@ -16,6 +16,8 @@ For home users:
 
 And the less common situations:
 
+- If you get fast blinking green, especially in classroom and hack-a-thon type situations, it is possible that your network has run out of DHCP IP addresses.
+
 - If your Wi-Fi network does not support DHCP, and only uses static IP addresses, it is possible, though somewhat difficult, to set up a Photon. You will need to flash a program like this by USB to set the IP address:
 
 ```
