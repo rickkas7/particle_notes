@@ -4,7 +4,27 @@ OpenSSL is a set of encryption tools. It's used when you need to update or repai
 
 The easiest way to install OpenSSL is to use the [Particle CLI Installer for Windows](https://binaries.particle.io/cli/installer/windows/ParticleCLISetup.exe), which installs it for you. 
 
-If you'd like to install it manually, or debug an existing installation, you can follow the instruction here.
+If you'd like to install it manually, or debug an existing installation, you can follow the instruction in the sections below that.
+
+## Using the Windows Particle CLI installer
+
+The easiest way to install OpenSSL is to use the [Particle CLI Installer for Windows](https://binaries.particle.io/cli/installer/windows/ParticleCLISetup.exe), which installs it for you. However it may not update the PATH, so you may need to do a few additional steps to use it.
+
+The installation defaults to **C:\OpenSSL-Win32**.
+
+If you want to use the CLI particle keys doctor command, for example, you will want to cd to that directory first:
+
+```
+cd c:\OpenSSL-Win32\bin
+particle keys doctor 12345678901234567890abcd
+```
+
+Alternatively, you can add it your PATH environment variable. An explanation of how to do this can be found here:
+
+[https://github.com/rickkas7/particle_notes/tree/master/modifying-path](https://github.com/rickkas7/particle_notes/tree/master/modifying-path)
+
+Just make sure you substitute **C:\OpenSSL-Win32\bin** for **C:\Program Files\dfu-util** in the final step.
+
 
 ## Download binaries
 
