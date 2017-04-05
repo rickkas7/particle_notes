@@ -1,0 +1,11 @@
+{
+	"name":"@rickkas7/wifipass",
+	"version":"0.0.1",
+	"description":"test program for Particle Photon wifi password encryption",
+	"license":"MIT",
+	"private":true,
+	"dependencies" : {
+		"yargs" : "^7.0.0",
+    	"node-rsa": "^0.4.2"
+	}
+}
