@@ -281,14 +281,14 @@ You can also do this from a file, and also using the console. Imagine you are ma
 We'll be creating a customer using the [customers](https://docs.particle.io/reference/api/#customers) API.
 
 ```
-$ curl -X POST https://api.particle.io/v1/products/1319/customers -u "tempmon06-3459:460edfd8d70742dd1f1e75c3d5cac5973351465d" -d email=customer4@mycompany.com -d no_password=true
+$ curl -X POST https://api.particle.io/v1/products/1319/customers -u "tempmon06-3459:460edfd8d70742dd1f1e75c3d5cac5973351465d" -d email=customer5@mycompany.com -d no_password=true
 {"token_type":"bearer","access_token":"59993d84d58dcc198069a171e9c2c69b0d52a58b","expires_in":7776000,"refresh_token":"290ffe88586471303b56f9aa3ab994ffa767f2d7","scope":"customer=customer5@mycompany.com"}
 ```
 
 - `1319` is the product ID
 - `tempmon06-3459` is the OAuth client ID (two-legged server type)
 - `460edfd8d70742dd1f1e75c3d5cac5973351465d` is the OAuth client secret
-- `customer4@mycompany.com` is the customer email
+- `customer5@mycompany.com` is the customer email
 - `no_password=true` says we're controlling the access tokens via two-legged auth; no login is allowed.
 
 If the customer already exists, you need to create a new client credentials token instead:
@@ -377,7 +377,7 @@ Now:
 The customer access token can be used in various API calls. For example, to list the customer's devices:
 
 ```
-$ curl https://api.particle.io/v1/devices?access_token= 59993d84d58dcc198069a171e9c2c69b0d52a58b
+$ curl https://api.particle.io/v1/devices?access_token=59993d84d58dcc198069a171e9c2c69b0d52a58b
 ```
 - 59993d84d58dcc198069a171e9c2c69b0d52a58b is a customer access token
 
