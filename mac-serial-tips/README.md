@@ -42,6 +42,10 @@ sudo npm install -g node-pre-gyp npm serialport particle-cli
 
 In the past, a few people have had trouble using Mac laptops with USB-3 USB ports. This hasn't happened recently, but putting a USB hub in between the laptop and the Photon has solved the problem.
 
+## Cables
+
+It's not a bad idea to try a different USB cable as well. In addition to defective cables, beware of some charging cables, which only provide power and do not allow access to the port for data.
+
 
 ## In Listening Mode (blinking blue)
 
