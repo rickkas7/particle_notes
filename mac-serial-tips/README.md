@@ -11,6 +11,13 @@ The Photon/Electron/Core have two different operating modes:
 
 This is important, because it's possible for the device to work in one mode or the other, and the fixes are sometimes different.
 
+When in normal operating mode (breathing cyan, green, white, etc.), the Photon/Electron/Core will also appear as a serial device, as long as you call:
+
+```
+Serial.begin(9600);
+```
+
+This is typically during setup(). The baud rate (9600) is ignored. In newer system firmware versions it can be omitted. You might see other values like 19200 or 115200, but the USB serial port runs at a fast speed regardless of what you set.
 
 ## Particle CLI Installation
 
