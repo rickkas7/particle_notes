@@ -12,7 +12,7 @@ The Particle SIM card is global. You can set up the SIM in one location and use 
 
 The [billing guide](https://docs.particle.io/guide/getting-started/billing/electron/) has additional information, but you have a home zone, say the United States (US$0.99/megabyte). If you travel to India, it's in a different zone with a different rate (US$2.99/megabyte). You'll initially be charged the $2.99 for the first megabyte of data in India, and the data usage there will be counted separately from your US data usage.
 
-If you want to set up the SIM card ahead of time you can use the right-side option at [https://setup.particle.io] (https://setup.particle.io) to activate only the Particle SIM card.
+If you want to set up the SIM card ahead of time you can use the right-side option at [https://setup.particle.io](https://setup.particle.io) to activate only the Particle SIM card.
 
 You can also set up the SIM from the setup web site when you get there, of course.
 
@@ -20,7 +20,7 @@ You can also set up the SIM from the setup web site when you get there, of cours
 
 Here's where things get a little trickier. You need to be online (breathing cyan) in order to complete the claiming process. This is impossible when you have an out-of-area Electron.
 
-Fortunately, you can still load code by USB before the Electron has been claimed. So, for example, you could use the [Particle CLI] (https://particle.io/cli) command:
+Fortunately, you can still load code by USB before the Electron has been claimed. So, for example, you could use the [Particle CLI](https://particle.io/cli) command:
 
 ```
 particle flash --usb firmware.bin
@@ -30,7 +30,7 @@ Using this technique you can preload your code. You can also update the system f
 
 This is also a good time to note the device ID and ICCID, since you may need them later.
 		
-Connect the device to your computer using USB and put the device in [listening mode] (https://docs.particle.io/guide/getting-started/modes/electron/#listening-mode) (blinking dark blue) by holding down the SETUP (or MODE) button until the main status LED blinks dark blue, about 3 seconds.
+Connect the device to your computer using USB and put the device in [listening mode](https://docs.particle.io/guide/getting-started/modes/electron/#listening-mode) (blinking dark blue) by holding down the SETUP (or MODE) button until the main status LED blinks dark blue, about 3 seconds.
 
 Then issue the command:
 
@@ -53,6 +53,6 @@ particle device add YOUR_DEVICE_ID
 
 You can even do it remotely, issuing the command from the United States for the device in Europe.
 
-You can also claim a device by its device ID from [https://build.particle.io] (https://build.particle.io), or you can use Particle phone apps, if desired.
+You can also claim a device by its device ID from [https://build.particle.io](https://build.particle.io), or you can use Particle phone apps, if desired.
 
-If you're in a remote location and you've forgotten your device ID and don't have access to a laptop with the Particle CLI, here are some [other ways you can get the device ID] (https://community.particle.io/t/finding-your-device-id/26531).
+If you're in a remote location and you've forgotten your device ID and don't have access to a laptop with the Particle CLI, here are some [other ways you can get the device ID](https://community.particle.io/t/finding-your-device-id/26531).
