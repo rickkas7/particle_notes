@@ -89,7 +89,7 @@ particle update
 
 - Edit line 5 of tinker-apn.cpp that begins with `STARTUP` to set the APN for your cellular provider. The example has fast.t-mobile.com; replace that with your APN.
 
-- Line 21 has a call to `Particle.keepAlive`. The keep-alive is explained in the 3rd-party SIM guide. If you have not upgraded your Electron system firmware, you should comment out this line or you will get a compile error.
+- Line 21 has a call to `Particle.keepAlive`. The keep-alive is explained in the [3rd-party SIM guide](https://docs.particle.io/faq/particle-devices/electron-3rdparty-sims/electron/). If you have not upgraded your Electron system firmware, you should comment out this line or you will get a compile error.
 
 - Then build and flash Tinker with APN. Make sure the Electron is blinking yellow before you use the flash command.
 
