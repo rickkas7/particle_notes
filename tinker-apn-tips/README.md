@@ -27,7 +27,7 @@ You can build your own version of Tinker with APN setting using Particle Build (
 
 - You can use [this link](https://go.particle.io/shared_apps/595d351dd3deccba2100013c) to open a shared version of the Tinker with APN app.
 
-Or, if you prefer, you can open tinker-apn.cpp and copy and paste it into a new app.
+Or, if you prefer, you can open [tinker-apn.cpp](https://raw.githubusercontent.com/rickkas7/particle_notes/master/tinker-apn-tips/tinker-apn.cpp) and copy and paste it into a new app.
 
 - Edit line 5 that begins with `STARTUP` to set the APN for your cellular provider. The example has fast.t-mobile.com; replace that with your APN.
 
@@ -77,7 +77,7 @@ particle flash --serial firmware.bin
 
 ## Method 3: Particle CLI
 
-- Download the tinker-apn.cpp file.
+- Download the [tinker-apn.cpp](https://raw.githubusercontent.com/rickkas7/particle_notes/master/tinker-apn-tips/tinker-apn.cpp) file.
 
 - Hold down RESET and MODE, release RESET and continue to hold down MODE while the status LED blinks magenta until it blinks yellow, then release MODE. 
 
