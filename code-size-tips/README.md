@@ -43,6 +43,8 @@ RAM used	1432 / 20480	7.0 %
 
 This output is from Particle Build (Web IDE). Use the Verify button, then click on the i-in-circle icon in the status bar in the status bar at the bottom of the window.
 
+Note: The maximum value in RAM used is wrong. It's 20480 bytes on the Spark Core. You can exceed this by quite a bit and your code will continue to work. The Photon and Electron usually have at least 60 Kbytes free. The amount used, however, is correct.
+
 ### Strings
 
 String constants are also included in the flash memory section. Here's a slightly longer code example with a string constant:
