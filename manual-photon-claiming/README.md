@@ -395,6 +395,8 @@ $ curl https://api.particle.io/v1/devices/3b0021001747353236343033/temp?access_t
 
 If you are creating a phone app for the customer, you can use the customer access token and refresh token to allow them to access the device directly using the Particle API, for example.
 
+This is also provides a way to publish events to a customer device with firmware that subscribes using the `MY_DEVICES` option.
+
 ### Restoring the device
 
 To restore the device back to a developer device, use the [console](https://console.particle.io) and go to the Devices tab. Select your device, then click the ... button. The two options you need are:
@@ -411,3 +413,5 @@ $ particle flash 3b0021001747353236343033 tinker
 
 - `3b0021001747353236343033` is the device ID that was unclaimed and removed
 - The flashing of tinker is to remove the product firmware.
+
+There are additional hints at the [Photon reset page](https://github.com/rickkas7/photonreset) that describe how to completely wipe a device clean so it's basically in a factory reset state. This is useful when you are recycling customer devices.
