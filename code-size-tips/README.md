@@ -425,7 +425,7 @@ Flash used	4596 / 110592	4.2 %
 RAM used	1556 / 20480	7.6 %
 ```
 
-Note that leaving the static keyword out does make a difference - that is a stack allocated variable, which is discussed below.
+Note that leaving the static keyword out does make a difference - without static is a stack allocated variable, which is discussed below.
 
 One of the advantages of using a statically allocated buffer like this is that since the memory is allocated at compile time, if your code successfully compiles, you know the RAM will be available when it's run. 
 
@@ -445,10 +445,10 @@ void loop() {
 ```
 
 ```
-/usr/local/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/bin/ld: target/workspace.elf section `.bss' will not fit in region `SRAM'
-/usr/local/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/bin/ld: Insufficient room for heap.
-/usr/local/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/bin/ld: link_heap_start is in the wrong memory space
-/usr/local/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/bin/ld: region `SRAM' overflowed by 42132 bytes
+arm-none-eabi/bin/ld: target/workspace.elf section `.bss' will not fit in region `SRAM'
+arm-none-eabi/bin/ld: Insufficient room for heap.
+arm-none-eabi/bin/ld: link_heap_start is in the wrong memory space
+arm-none-eabi/bin/ld: region `SRAM' overflowed by 42132 bytes
 ```
 
 
@@ -621,7 +621,7 @@ Also note that stack allocation variables are not initialized to zero automatica
 
 [Retained memory](https://docs.particle.io/reference/firmware/photon/#backup-ram-sram-), or the special static RAM (SRAM) or backup RAM section in the processor, is a special block of 3068 bytes that is preserved when the processor is in deep sleep mode and across resets. On the Photon, it's also possible to add a coin cell battery to preserve the contents when the power is removed.
 
-Unlike flash, the SRAM block can be accessed at full processor speed, and does not wear out with use. 
+Unlike flash, the SRAM block can be written to at full processor speed, and does not wear out when written to.
 
 Retained memory does not affect the flash size or the RAM used size - it's allocated out of the separate SRAM block.
 
