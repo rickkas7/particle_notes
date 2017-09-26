@@ -35,6 +35,12 @@ At the time of writing, the most common boot loader versions are:
 - 11 (0.6.2)
 - 100 (0.7.0)
 
+## Boot loader downloads 
+
+You can download the v7 (0.4.9) bootloaders for the Photon, P1, and Electron on the [JTAG instructions page](https://docs.particle.io/faq/particle-tools/jtag/electron/#programming-the-boot-loader).
+
+The boot loaders v11 (0.6.2) and v100 (0.7.0) can be found on the [0.7.0 release page](https://github.com/spark/firmware/releases/tag/v0.7.0-rc.2).
+
 ## Dim D7 (corrupted boot loader)
 
 One of the things that can happen is that the boot loader sector (sector 0) becomes corrupted to erased. When this happens, when the processor starts the only thing that happens is the D7 LED will be on dimly. This is a side effect of being in JTAG/SWD mode. 
@@ -60,6 +66,7 @@ Note that there are different boot loader binaries for each platform (Photon, P1
 This technique can be handy for manually downgrading the boot loader, but make sure you install the older version of system firmware first. The reason is that the device will reboot after flashing the boot loader by serial, and if you still have a newer version of system firmware, it will upgrade the boot loader again.
 
 This can also be done OTA by specifying the device name or device ID instead of --serial, if the device is still able to get to breathing cyan or breathing magenta.
+
 
 ## Updating the boot loader by JTAG/SWD
 
