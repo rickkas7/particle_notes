@@ -1,6 +1,6 @@
 # Particle device boot loaders
 
-All of the Particle devices uses a boot loader. This small bit of code is the first thing that runs when the processor boots, and is responsible for initial processor setup, DFU mode, and loading system firmware.
+All of the Particle devices use a boot loader. This small bit of code is the first thing that runs when the processor boots, and is responsible for initial processor setup, DFU mode, and loading system firmware.
 
 ## Automatic updating of the boot loader
 
@@ -80,3 +80,115 @@ The [instructions for using JTAG/SWD mode are here](https://docs.particle.io/faq
 System version 0.7.0 is a special case when it comes to the boot loader. While the 0.6.2 boot loader can safely run system firmware back to 0.4.9, this is not the case with the 0.7.0 boot loader (version 100).
 
 When you downgrade from 0.7.0 to an earlier version like 0.6.2, you need to downgrade in a specific order, as described in the [release notes for 0.7.0](https://community.particle.io/t/particle-firmware-updates-thread/14378/49).
+
+
+### If you have upgraded to 0.7.0 and subsequently downgraded to 0.6.x or earlier
+
+If you previously upgraded to 0.7.0 and then downgraded, by particle update, or by the particle device doctor, to 0.6.2 without manually downgrading the boot loader, you'll have to upgrade to 0.7.0 again before downgrading again (sorry).
+
+#### Photon
+
+From the [release site](https://github.com/spark/firmware/releases/tag/v0.7.0-rc.3), download:
+
+- [system-part1-0.7.0-rc.3-photon.bin](https://github.com/spark/firmware/releases/download/v0.7.0-rc.3/system-part1-0.7.0-rc.3-photon.bin)
+- [system-part2-0.7.0-rc.3-photon.bin](https://github.com/spark/firmware/releases/download/v0.7.0-rc.3/system-part2-0.7.0-rc.3-photon.bin)
+
+Then the Photon in DFU mode (blinking yellow) and apply the update:
+
+```
+particle flash --usb system-part1-0.7.0-rc.3-photon.bin
+particle flash --usb system-part2-0.7.0-rc.3-photon.bin
+```
+
+#### P1
+
+From the [release site](https://github.com/spark/firmware/releases/tag/v0.7.0-rc.3), download:
+
+- [system-part1-0.7.0-rc.3-p1.bin](https://github.com/spark/firmware/releases/download/v0.7.0-rc.3/system-part1-0.7.0-rc.3-p1.bin)
+- [system-part2-0.7.0-rc.3-p1.bin](https://github.com/spark/firmware/releases/download/v0.7.0-rc.3/system-part2-0.7.0-rc.3-p1.bin)
+
+Then the P1 in DFU mode (blinking yellow) and apply the update:
+
+```
+particle flash --usb system-part1-0.7.0-rc.3-p1.bin
+particle flash --usb system-part2-0.7.0-rc.3-p1.bin
+```
+
+#### Electron
+
+From the [release site](https://github.com/spark/firmware/releases/tag/v0.7.0-rc.3), download:
+
+- [system-part1-0.7.0-rc.3-electron.bin](https://github.com/spark/firmware/releases/download/v0.7.0-rc.3/system-part1-0.7.0-rc.3-electron.bin)
+- [system-part2-0.7.0-rc.3-electron.bin](https://github.com/spark/firmware/releases/download/v0.7.0-rc.3/system-part2-0.7.0-rc.3-electron.bin)
+- [system-part3-0.7.0-rc.3-electron.bin](https://github.com/spark/firmware/releases/download/v0.7.0-rc.3/system-part3-0.7.0-rc.3-electron.bin)
+
+Then the Electron in DFU mode (blinking yellow) and apply the update:
+
+```
+particle flash --usb system-part1-0.7.0-rc.3-electron.bin
+particle flash --usb system-part2-0.7.0-rc.3-electron.bin
+particle flash --usb system-part3-0.7.0-rc.3-electron.bin
+```
+
+
+### Downgrading from 0.7.0 to 0.6.2
+
+#### Photon
+
+From the [release site](https://github.com/spark/firmware/releases/tag/v0.6.2), download:
+
+- [system-part1-0.6.2-photon.bin](https://github.com/spark/firmware/releases/download/v0.6.2/system-part1-0.6.2-photon.bin)
+- [system-part2-0.6.2-photon.bin](https://github.com/spark/firmware/releases/download/v0.6.2/system-part2-0.6.2-photon.bin)
+- [bootloader-0.6.2-photon.bin](https://github.com/spark/firmware/releases/download/v0.7.0-rc.3/bootloader-0.6.2-photon.bin)
+
+Put the device in listening mode (blinking blue) and apply the updates in this order:
+
+```
+particle flash --serial system-part2-0.6.2-photon.bin
+particle flash --serial bootloader-0.6.2-photon.bin
+particle flash --serial system-part1-0.6.2-photon.bin
+```
+
+Note: It must be done in this order (2, bootloader, 1). This update can also be done OTA. The bootloader can only be flashed serial or OTA, you cannot flash the bootloader in DFU mode (blinking yellow).
+
+
+#### P1
+
+From the [release site](https://github.com/spark/firmware/releases/tag/v0.6.2), download:
+
+
+- [system-part1-0.6.2-p1.bin](https://github.com/spark/firmware/releases/download/v0.6.2/system-part1-0.6.2-p1.bin)
+- [system-part2-0.6.2-p1.bin](https://github.com/spark/firmware/releases/download/v0.6.2/system-part2-0.6.2-p1.bin)
+- [bootloader-0.6.2-p1.bin](https://github.com/spark/firmware/releases/download/v0.7.0-rc.3/bootloader-0.6.2-p1.bin)
+
+Put the device in listening mode (blinking blue) and apply the updates in this order:
+
+```
+particle flash --serial system-part2-0.6.2-p1.bin
+particle flash --serial bootloader-0.6.2-p1.bin
+particle flash --serial system-part1-0.6.2-p1.bin
+```
+
+Note: It must be done in this order (2, bootloader, 1). This update can also be done OTA. The bootloader can only be flashed serial or OTA, you cannot flash the bootloader in DFU mode (blinking yellow).
+
+#### Electron
+
+From the [release site](https://github.com/spark/firmware/releases/tag/v0.6.2), download:
+
+- [system-part1-0.6.2-electron.bin](https://github.com/spark/firmware/releases/download/v0.6.2/system-part1-0.6.2-electron.bin)
+- [system-part2-0.6.2-electron.bin](https://github.com/spark/firmware/releases/download/v0.6.2/system-part2-0.6.2-electron.bin)
+- [system-part3-0.6.2-electron.bin](https://github.com/spark/firmware/releases/download/v0.6.2/system-part3-0.6.2-electron.bin)
+- [bootloader-0.6.2-electron.bin](https://github.com/spark/firmware/releases/download/v0.7.0-rc.3/bootloader-0.6.2-electron.bin)
+ 
+Put the device in listening mode (blinking blue) and apply the updates in this order:
+
+```
+particle flash --serial system-part3-0.6.2-electron.bin
+particle flash --serial system-part2-0.6.2-electron.bin
+particle flash --serial system-part1-0.6.2-electron.bin
+particle flash --serial bootloader-0.6.2-electron.bin
+```
+
+This update can also be done OTA. The bootloader can only be flashed serial or OTA, you cannot flash the bootloader in DFU mode (blinking yellow).
+
+
