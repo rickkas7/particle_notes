@@ -67,9 +67,9 @@ The reason for all of this is that the client token needs to be kept safe becaus
 
 ## Product ID or Slug
 
-All of the product APIs include `:productOdOrSlug` in the URL.
+All of the product APIs include `:productIdOrSlug` in the URL.
 
-Your product ID is a number, located next to the key on the top of your priduct window. It's 1319 in the screenshot below.
+Your product ID is a number, located next to the key on the top of your product window. It's 1319 in the screenshot below.
 
 You can also use the string in the URL. In this example, its **tempmon-v100**.
 
