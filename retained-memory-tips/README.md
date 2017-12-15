@@ -112,7 +112,7 @@ valueA=15 valueB=65
 valueA=16 valueB=73
 ```
 
-## But not an initialized struct
+### But not an initialized struct
 
 ```
 #include "Particle.h"
@@ -153,7 +153,7 @@ value=11
 value=12
 ```
 
-## Same for actual classes, too
+### Same for actual classes, too
 
 ```
 #include "Particle.h"
@@ -195,7 +195,7 @@ value=11
 value=12
 ```
 
-## Uninitialized values in classes work though
+### Uninitialized values in classes work though
 
 ```
 #include "Particle.h"
@@ -238,7 +238,7 @@ value=6
 ```
 
 
-## Static class members are OK too
+### Static class members are OK too
 
 ```
 #include "Particle.h"
@@ -435,7 +435,7 @@ There's actually a zero-ohm resistor that connects the two, so with a hot air re
 
 The E series cellular module does not connect VBAT to 3V3 internally, so you can choose whether you want it to behave like the Electron or Photon/P1 based on how you set up your base board.
 
-## Backup Batteries
+## Backup Power
 
 If you are using backup power to VBAT, the most common methods are a coin cell battery or a supercap. 
 
