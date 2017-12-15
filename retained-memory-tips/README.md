@@ -281,7 +281,7 @@ value=6
 value=7
 ```
 
-### And, the you can initialize those!
+### And you can initialize those!
 
 ```
 #include "Particle.h"
