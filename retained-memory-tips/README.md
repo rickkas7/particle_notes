@@ -441,7 +441,7 @@ If you are using backup power to VBAT, the most common methods are a coin cell b
 
 When not powered, the Photon uses a maximum of 19 uA from VBAT.
 
-### Coil Cell
+### Coin Cell
 
 A CR2032 Lithium coin cell battery is one option for powering VBAT. It's only used when the Photon isn't otherwise powered by VIN or USB. You might use a holder like [this one](https://www.adafruit.com/product/1870) from Adafruit.
 
