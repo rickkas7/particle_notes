@@ -10,9 +10,9 @@ If you have not already done so, install the [Particle CLI](https://www.particle
 
 ## Download the binary
 
-Download the gpsdump.bin file in most cases. This uses the internal antenna on the AssetTracker v2 board.
+Download the [gpsdump.bin](https://github.com/rickkas7/particle_notes/raw/master/asset-tracker-troubleshooting/gpsdump.bin) file in most cases. This uses the internal antenna on the AssetTracker v2 board.
 
-If you are using an external antenna, use gpsdump_ext.bin, which is configured to use an external active GPS antenna connected to the AssetTracker u.FL GPS antenna connector.
+If you are using an external antenna, use [gpsdump_ext.bin](https://github.com/rickkas7/particle_notes/raw/master/asset-tracker-troubleshooting/gpsdump_ext.bin), which is configured to use an external active GPS antenna connected to the AssetTracker u.FL GPS antenna connector.
 
 ## Flash the binary
 
