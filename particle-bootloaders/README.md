@@ -31,9 +31,10 @@ This shows that the Photon is running with system firmware 0.6.2 (version 108) a
 At the time of writing, the most common boot loader versions are:
 
 - 7 (system firmware 0.4.9 - 0.6.0)
-- 9 (0.6.1rc, 0.6.1 final, 0.6.2rc)
-- 11 (0.6.2)
-- 100 (0.7.0)
+- 9 (0.6.1-rc, 0.6.1-final, 0.6.2-rc)
+- 11 (0.6.2, 0.6.3, 0.6.4)
+- 100 (0.7.0-rc.1)
+- 101 (0.7.0-rc.5
 
 ## Boot loader downloads 
 
@@ -81,10 +82,19 @@ System version 0.7.0 is a special case when it comes to the boot loader. While t
 
 When you downgrade from 0.7.0 to an earlier version like 0.6.2, you need to downgrade in a specific order, as described in the [release notes for 0.7.0](https://community.particle.io/t/particle-firmware-updates-thread/14378/49).
 
+A much easier method, however, is to downgrade to a version that knows how to download the bootloader automatically:
 
-### If you have upgraded to 0.7.0 and subsequently downgraded to 0.6.x or earlier
+These include:
+
+- For Electron: [0.6.4](https://github.com/particle-iot/firmware/releases/tag/v0.6.4)
+- For Photon/P1: [0.6.3](https://github.com/particle-iot/firmware/releases/tag/v0.6.3)
+- For all: [0.5.5](https://github.com/particle-iot/firmware/releases/tag/v0.5.5)
+
+### If you have upgraded to 0.7.0 and subsequently downgraded to 0.6.2 or earlier
 
 If you previously upgraded to 0.7.0 and then downgraded, by particle update, or by the particle device doctor, to 0.6.2 without manually downgrading the boot loader, you'll have to upgrade to 0.7.0 again before downgrading again (sorry).
+
+Note you only need to do this if you actually need 0.6.2. If you only need 0.6.x you should downgrade to 0.6.3 or 0.6.4 which know how to downgrade the bootloader automatically.
 
 #### Photon
 
@@ -132,6 +142,8 @@ particle flash --usb system-part3-0.7.0-rc.3-electron.bin
 
 
 ### Downgrading from 0.7.0 to 0.6.2
+
+Note you only need to do this if you actually need 0.6.2. If you only need 0.6.x you should downgrade to 0.6.3 or 0.6.4 which know how to downgrade the bootloader automatically.
 
 #### Photon
 
