@@ -309,6 +309,8 @@ Also, you really need to use your OAuth client ID and secret in the basic auth (
 
 ### Create a product claim code
 
+You don't do this step when using the Device Setup SDK for iOS or Android. You pass the shadow customer access token from the previous step to the Device Setup SDK and it takes care of creating a product claim code on behalf of your customer for you.
+
 [Creating a claim code](https://docs.particle.io/reference/api/#create-a-claim-code) allows to cloud to know which user account, and in this case product, to associate the Photon with.
 
 The `customer5@mycompany.com` shadow customer entry is completely hidden from the user; it's part of the claim code, however.
@@ -351,6 +353,8 @@ If you didn't do it correctly, you'll get back something like this, or possibly 
 ```
 
 If you pass an invalid claim code, such as one that's expired, the result will still be 0 but the claiming will fail and the Photon will remain in the unclaimed state.
+
+This steps is also done by the Device Setup SDK.
 
 ### Set up everything else
 
