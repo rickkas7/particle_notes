@@ -37,6 +37,8 @@ You can tell for sure from the **Properties** as it will list **Particle** as th
 
 ![Old Driver Properties](images/old-driver-properties.png)
 
+### Removing the Old Serial Driver
+
 To remove the old driver, exit the Device Manager and disconnect all Particle devices from USB.
 
 Open an Administrator Command Prompt. In the **Type here to search** box in the lower left corner of the screen next to the Windows button type **Command** (1). Right click on **Command Prompt** (2). Select **Run as administrator** (3).
