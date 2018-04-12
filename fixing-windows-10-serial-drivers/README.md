@@ -68,6 +68,8 @@ However if you have Photon or Electron devices in the device list, you'll need t
 
 Select the Photon or Electron item and hit the Delete key, or right-click and select **Uninstall**. The item will disappear. Repeat for all of the Photon or Electron items.
 
+Make sure you select the **Delete driver software for this device** checkbox, otherwise the Particle device driver may come back when you plug the device back in.
+
 This should clear up any issues caused by having the old serial driver installed.
 
 
