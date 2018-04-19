@@ -118,6 +118,31 @@ For reference, however, the security type values are:
 - wpa2_mixed: 4194310 (0x00400006)
 - wpa2: 4194310 (0x00400006)
 
+There are also additional constants in system firmware 0.7.0 and later. First convert the value to hex. For example, if you have 37748742 it is 0x0240 0006.
+
+The low order word is the constants:
+
+```
+WEP_ENABLED            0x0001
+TKIP_ENABLED           0x0002
+AES_ENABLED            0x0004
+```
+
+So 0x0006 = AES\_ENABLED + TKIP\_ENABLED.
+
+The high order word is the constants:
+
+```
+WPA_SECURITY       0x00200000
+WPA2_SECURITY      0x00400000
+ENTERPRISE_ENABLED 0x02000000
+```
+
+So 0x0240 = ENTERPRISE\_ENABLED + WPA2\_SECURITY.
+
+So putting it all together: 0x02400006 = ENTERPRISE\_ENABLED + WPA2\_SECURITY + AES\_ENABLED + TKIP\_ENABLED.
+
+
 The other thing you need is the secure password. This is an encrypted version of the Wi-Fi password. I had trouble doing this using just openssl, so I've included a simple node program to calculate the encrypted password.
 
 If you're in the directory with package.json and wifipass.js you'll need to install the dependencies the first time you use it:
