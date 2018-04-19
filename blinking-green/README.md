@@ -49,30 +49,10 @@ void loop() {
 }
 ```
 
-- If the Wi-Fi network restricts access to known device Ethernet MAC addresses, you'll need to determine the MAC address and give it to the network administrator. Flash this program by USB, then connect a serial monitor and view the output to find the MAC address.
+- If the Wi-Fi network restricts access to known device Ethernet MAC addresses, you'll need to determine the MAC address and give it to the network administrator. Put the Photon in listening mode (blinking dark blue) by holding down the SETUP button, then use the Particle CLI command:
 
 ```
-#include "Particle.h"
-
-SYSTEM_THREAD(ENABLED);
-
-void setup() {
-	Serial.begin(9600);
-
-	// To allow more time to connect by serial
-	delay(10000);
-
-	byte mac[6];
-	WiFi.macAddress(mac);
-
-	char buf[256];
-	snprintf(buf, sizeof(buf), "%02x:%02x:%02x:%02x:%02x:%02x",
-			mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
-	Serial.println(buf);
-}
-
-void loop() {
-}
+particle serial mac
 ```
 
 - If the Photon has ever been used with an external antenna, it may still be set to use the external antenna only. It won't fall back to the internal antenna, even if there is no signal, when using the ANT_EXTERNAL mode. The following program resets the antenna.
