@@ -133,3 +133,7 @@ compile exited with code 0
 ```
 
 If an error occurs, the Travis log will show the error and the build will stop with a failed Travis build.
+
+You can see the three files (.travis.yml, package.json, build.yml) in an actual project [here](https://github.com/rickkas7/SpiffsParticleRK). 
+
+You can see the Travis CI build output [here](https://travis-ci.org/rickkas7/SpiffsParticleRK).
