@@ -1,10 +1,10 @@
 # WPA2 Enterprise Configuration 
 
-Starting with Particle Device OS 0.7.0 you can use the Photon and P1 on a WPA2 Enterprise Wi-Fi network. This type of network is common in university and corporate networks. If you see a reference to RADIUS, 802.1(x), need to enter both a username and password, or have a key in PEM format, you probably have a WPA2 Enterprise network.
+Starting with Particle Device OS 0.7.0 you can use the Photon and P1 on a WPA2 Enterprise Wi-Fi network. This type of network is common in university and corporate networks. If you see a reference to RADIUS, 802.1(x), need to enter both a username and password, or have a certificate or key file, you probably have a WPA2 Enterprise network.
 
 Most home networks use WPA2 Personal and have a simpler setup that only requires a SSID (network name) and a password and do not require these steps.
 
-This is also different than situations where you enter a password (sometimes a username as well) into a web page to get onto the network. That's referred to as a captive portal and is common in hotel and other public Wi-Fi networks. Captive portals are not supported.
+This is also different than situations where you enter a password (sometimes a username or email address as well) into a web page to get onto the network. That's referred to as a captive portal and is common in hotel and other public Wi-Fi networks. Captive portals are not supported.
 
 ## Install the Particle CLI
 
@@ -44,21 +44,9 @@ Then enter the command:
 particle serial wifi
 ```
 
-Select the SSID of the network you want to log into. You can either scan for it or manually enter it.
+Select the SSID of the network you want to log into. You can either scan for it or manually enter it. You can either scan for the security type and cipher or manually select it as well.
 
-If you have selected a WPA2 Enterprise network you'll have additional options for security:
-
-```
-Security 0=unsecured, 1=WEP, 2=WPA, 3=WPA2, 4=WPA Enterprise, 5=WPA2 Enterprise:
-```
-
-Select the appropriate security cipher:
-
-```
-Security Cipher 1=AES, 2=TKIP, 3=AES+TKIP:
-```
-
-Then you'll need to select the EAP Type:
+Then you'll need to select the EAP Type. This option only appears if you are using a WPA Enterprise or WPA2 Enterprise network.
 
 ```
 EAP Type 0=PEAP/MSCHAPv2, 1=EAP-TLS:
@@ -70,15 +58,15 @@ If your enterprise network uses PEAP/MSCHAPv2 and does not provide any certifica
 
 ```
 EAP Type 0=PEAP/MSCHAPv2, 1=EAP-TLS: 0 <ENTER>
-Username: particle <ENTER>
-Password: particle2017 <ENTER>
+Username: YOUR_USERNAME <ENTER>
+Password: YOUR_PASSWORD <ENTER>
 Outer identity (optional): <ENTER>
 Root CA in PEM format (optional): <ENTER>
 ```
 
 On some networks, such as the default setting in Windows NPS, the Outer identity is required to be the same as your Username. If you are unable to connect with the Outer identity blank, try setting it to your Username.
 
-Note: This is the easiest setup method to gain a connection, however be warned it is not secure. Use certificates to ensure maximum security.
+This is the easiest setup method to gain a connection, however it is not secure. Whenever possible use certificates to ensure maximum security.
 
 ### PEAP/MSCHAPv2 LOGIN / PASSWORD with Root CA
 
@@ -86,8 +74,8 @@ If your enterprise network uses PEAP/MSCHAPv2 and has a Root CA (certificate aut
 
 ```
 EAP Type 0=PEAP/MSCHAPv2, 1=EAP-TLS: 0 <ENTER>
-Username: particle <ENTER>
-Password: particle2017 <ENTER>
+Username: YOUR_USERNAME <ENTER>
+Password: YOUR_PASSWORD <ENTER>
 Outer identity (optional): <ENTER>
 Root CA in PEM format (optional): <copy/paste in file ca.crt> 
 -----BEGIN CERTIFICATE-----
@@ -95,6 +83,8 @@ MIIFlDCCA3ygAwIBAgIJAI01a4ML65mlMA0GCSqGSIb3DQEBCwUAMFcxCzAJBgNV
 ...
 -----END CERTIFICATE-----
 ```
+
+This is the setting you'd typically used for [eduroam](https://www.eduroam.org/). 
 
 
 ### EAP-TLS with Client Certificate, Client Key and Root CA
@@ -153,7 +143,7 @@ In a Command Prompt or Terminal window enter the command:
 particle device add YOUR_DEVICE_ID
 ```
 
-Replace YOUR\_DEVICE\_ID with the Device ID you got earlier from `particle serial identify`. 
+Replace `YOUR_DEVICE_ID` with the Device ID you got earlier from `particle serial identify`. 
 
 The device ID uniquely identifies your Particle device (Photon, Electron, P1, Core, etc.) to the Particle cloud. It consists of 24 hexadecimal characters, and looks like this: 1e0032123447343149111039.
 
