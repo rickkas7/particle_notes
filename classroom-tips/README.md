@@ -11,9 +11,15 @@ With the self-configuration option, students:
 
 This method is allows factory-fresh Photons to be unboxed and used immediately, however there are some caveats:
 
-- Some phones have difficulties setting up a Photon (currently many Samsung Galaxy Note devices and some other Android phones).
+- Some phones have difficulties setting up a Photon.
 - This process is hard to debug since there isn't much feedback if something goes wrong.
 - Wi-Fi based configuration always uses Wi-Fi channel 1 when in listening mode (blinking blue). With a large number of Photons simultaneously using the same Wi-Fi channel interference can result. It may be helpful to stagger turning on the Photons.
+
+On the narrower side of the Photon box is a barcode and serial number that looks like: PHHMAB804PAKLJZ
+
+The Wi-Fi network to configure that Photon is Photon-KLJZ. The last 4 characters of the serial number are the suffix on the Wi-Fi configuration network name. That's how you can tell which network to use. 
+
+For older Photons, the serial number looks like PH-160329-KVXY-0 and the network is Photon-KVXY.
 
 ### Setting up an instructor station
 
