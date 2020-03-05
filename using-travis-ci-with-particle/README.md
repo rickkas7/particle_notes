@@ -10,20 +10,7 @@ For security reasons, you may want to create a separate Particle account that yo
 
 You can just another email address if you have one, or if you use Google Mail, you can the a plus email. For example, if your Google email address is johnsmith@gmail.com, you can sign up for a Particle account at johnsmith+travis@gmail.com and you'll have two separate Particle accounts, but the email will still go to your regular gmail account.
 
-Log into [build.particle.io](https://build.particle.io) and go to Settings, the gear icon (1) and copy the Access Token (2).
-
-![access token](images/user_token.png)
-
-You may prefer to use curl, which will allow you to create an access token that does not expire using the [generate access token API](https://docs.particle.io/reference/api/#generate-an-access-token).
-
-```
-curl https://api.particle.io/oauth/token \
-       -u particle:particle \
-       -d grant_type=password \
-       -d "username=joe@example.com" \
-       -d "password=SuperSecret" \
-       -d "expires_in=0"
-```
+Create an access token using the [Particle CLI](https://docs.particle.io/reference/developer-tools/cli/#particle-token-create) command `particle token create`.
 
 
 ## Enabling Travis

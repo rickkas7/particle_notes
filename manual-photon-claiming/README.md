@@ -8,9 +8,7 @@ The first section shows how to set up a regular developer device. The second sec
 
 ### Get an access token
 
-When you use normal, non-product APIs, you use a user token. One way to get your user token is to use [https://build.particle.io](https://build.particle.io). Click on the Settings icon (1) then copy and paste the Access Token (2).
-
-![User Access Token](images/user_token.png)
+Create an access token using the [Particle CLI](https://docs.particle.io/reference/developer-tools/cli/#particle-token-create) command `particle token create`.
 
 You can also do this using the [oauth/token API](https://docs.particle.io/reference/api/#generate-an-access-token) if you prefer.
 
@@ -27,7 +25,7 @@ Use the [device_claims API](https://docs.particle.io/reference/api/#create-a-cla
 $ curl -X POST https://api.particle.io/v1/device_claims?access_token=ab142050967cff79dc6586c82193978b3a62cab9
 ```
 
-- `ab142050967cff79dc6586c82193978b3a62cab9` is the access token I got from Particle build
+- `ab142050967cff79dc6586c82193978b3a62cab9` is the access token I created earlier.
 
 You should get back something like this containing the claim code (and also all of the devices belonging to your account:
 

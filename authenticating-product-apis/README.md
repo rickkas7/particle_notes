@@ -4,9 +4,7 @@
 
 ## User token
 
-When you use normal, non-product APIs, you use a user token. One way to get your user token is to use [https://build.particle.io](https://build.particle.io). Click on the Settings icon (1) then copy and paste the Access Token (2).
-
-![User Access Token](images/user_token.png)
+When you use normal, non-product APIs, you use a user token. One way to get your user token is to use the [Particle CLI](https://docs.particle.io/reference/developer-tools/cli/#particle-token-create) command `particle token create`.
 
 Remember to keep your access token secret; they allow access to your account to anyone who has the token! 
 
