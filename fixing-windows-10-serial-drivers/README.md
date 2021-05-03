@@ -11,7 +11,7 @@ One common bit of confusion is that there are two different drivers used, one fo
 
 The COM port serial driver is used in normal operating mode (Serial object) and in listening mode (blinking dark blue). To check the serial drivers, open the **Device Manager**. The easiest way in Windows 10 is to type **Device** in the **Type here to search** box in the lower left corner of the screen next to the Windows button.
 
-With a Photon or Electron (or a P1 with USB) connected, it should look like this in **Ports (COM & LPT)**.
+With a Particle device connected by USB and in normal operating mode, listening mode, or safe mode, it should look like this in **Ports (COM & LPT)**.
 
 ![Device Manager](images/device-manager.png)
 
@@ -29,13 +29,17 @@ Note that it should be using the Microsoft Windows serial driver.
 
 It's possible to have the old serial driver installed in Windows 10. If this happens, you should manually remove it.
 
-If the device shows up as Photon or Electron, you probably still have the old driver installed.
+If the device shows up as Photon, Electron, Argon, Boron, etc. you probably still have the old driver installed.
 
 ![Old Driver Device Manager](images/old-driver-list.png)
 
 You can tell for sure from the **Properties** as it will list **Particle** as the **Driver Provider**.
 
 ![Old Driver Properties](images/old-driver-properties.png)
+
+Another possibility is that it has a **libwdi** driver, which generally works, except for web-based USB, where it will cause an Access Denied Error. Switching to the Windows driver will still allow the Particle CLI to work, and works properly with WebUSB.
+
+![Old Driver libwdi](images/old-libwdi.png)
 
 ### Removing the Old Serial Driver
 
@@ -58,25 +62,46 @@ Then from the Device Manager **View** menu (1), select **Show hidden devices** (
 
 ![Show hidden devices](images/show-hidden-devices.png)
 
-If your device list only shows **USB Serial Device** in **Ports (COM & LPT)** you don't have to do anything else. The correct driver is assigned.
+If your device list only shows **USB Serial Device** in **Ports (COM & LPT)** you skip down the the DFU mode instructions below. The correct serial driver is assigned.
 
 ![Hidden devices](images/hidden-devices.png)
 
-However if you have Photon or Electron devices in the device list, you'll need to remove those devices.
+However if you have Particle devices in the device list, you'll need to remove those devices.
 
 ![Old hidden devices](images/old-hidden.png)
 
-Select the Photon or Electron item and hit the Delete key, or right-click and select **Uninstall**. The item will disappear. Repeat for all of the Photon or Electron items.
+Select a Particle device item (Photon, Electron, Argon, Boron, etc.) and hit the Delete key, or right-click and select **Uninstall**. 
 
-Make sure you select the **Delete driver software for this device** checkbox, otherwise the Particle device driver may come back when you plug the device back in.
+Make sure you select the **Delete driver software for this device** checkbox, otherwise the Particle device driver will come back when you plug the device back in.
+
+The item will disappear. Repeat for all of the Particle device items.
 
 This should clear up any issues caused by having the old serial driver installed.
 
 
 ## DFU Drivers
 
-The DFU drivers are only used when the Photon/P1/Electron/Core is blinking yellow. You typically enter DFU mode by holding down RESET and SETUP, releasing RESET and continuing to hold down SETUP while it blinks magenta until it blinks yellow, then release. (For the Electron and Core, the button is labeled MODE instead of SETUP.)
+The DFU drivers are only used when your Particle device is blinking yellow. You typically enter DFU mode by holding down RESET and MODE, releasing RESET and continuing to hold down MODE while it blinks magenta (red and blue at the same time) until it blinks yellow, then release. (The button is labeled SETUP, not MODE, on the Photon.)
 
-The easiest way to install the DFU drivers is to install the [Particle CLI](https://particle.io/cli), which should install the drivers for you.
+In the Device Manager, check and see if there are any devices under **libusbK** or **libusb-win32**. These are the wrong driver and must be changed to use web-based USB (WebUSB) from a browser.
 
-If you are still having trouble using DFU, there are more tips in the [Installing DFU-util FAQ](https://docs.particle.io/faq/particle-tools/installing-dfu-util/).
+![libusbK devices](images/libusbk.png)
+
+![libusb-win32 devices](images/libusb.png)
+
+Select a Particle device item (Photon, Electron, Argon, Boron, etc.) and hit the Delete key, or right-click and select **Uninstall**. 
+
+Make sure you select the **Delete driver software for this device** checkbox, otherwise the Particle device driver will come back when you plug the device back in.
+
+![Delete Software](images/boron-delete.png)
+
+- [Download the Zadig utility](https://zadig.akeo.ie/) and run it. It requires Administrator privileges.
+- Connect the device by USB to your computer
+- Make sure the device is in DFU mode (blinking yellow). If not, hold down the MODE button and tap RESET. Continue to hold down MODE (SETUP on the Photon) while the status LED blinks magenta (red and blue at the same time) until it blinks yellow, then release MODE.
+- In the **View** menu, select **List All Devices**
+- Select **Boron DFU Mode** (or whatever device you have)
+- Select **WinUSB**. 
+- Click **Install WCID Driver** (this may take a few minutes)
+
+![Zadig](images/zadig.png)
+ 
