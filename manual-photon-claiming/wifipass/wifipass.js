@@ -8,9 +8,9 @@ var password = argv._[1];
 
 // console.log("key=" + key + " password=" + password);
 
-var keyBuf = new Buffer(key, 'hex');
+var keyBuf = Buffer.from(key.substring(44), 'hex');
 
-var rsa = new NodeRSA(keyBuf.slice(22), 'pkcs1-public-der', {
+var rsa = new NodeRSA(keyBuf, 'pkcs1-public-der', {
 	encryptionScheme: 'pkcs1'
 });
 

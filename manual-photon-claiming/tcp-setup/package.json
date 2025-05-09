@@ -1,0 +1,11 @@
+{
+	"name": "@rickkas7/tcp-setup",
+	"version": "0.0.1",
+	"description": "test program for Particle Photon wifi setup over TCP",
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"node-rsa": "^1.1.1",
+		"yargs": "^16.1"
+	}
+}
